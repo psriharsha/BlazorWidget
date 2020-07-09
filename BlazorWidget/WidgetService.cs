@@ -10,7 +10,7 @@ namespace BlazorWidget
     {
         private readonly IJSRuntime jsRuntime;
         private DotNetObjectReference<WidgetService> wServiceListener;
-        public event EventHandler OnWindowClosed;
+        public event EventHandler OnWidgetClosed;
 
         public WidgetService(IJSRuntime jsRuntime)
         {
@@ -31,7 +31,7 @@ namespace BlazorWidget
         [JSInvokable("NotifyWindowClosed")]
         public void NotifyWindowClosed()
         {
-            OnWindowClosed?.Invoke(this, null);
+            OnWidgetClosed?.Invoke(this, null);
         }
     }
 }

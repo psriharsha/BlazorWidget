@@ -17,7 +17,7 @@ Welcome to your new app.
 
     private async Task HandleClick()
     {
-        widgetService.OnWindowClosed += windowClosed;
+        widgetService.OnWidgetClosed += windowClosed;
         await widgetService.Open("http://localhost:59079", $"something{count++}", 200, 300);
     }
 
