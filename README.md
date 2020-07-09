@@ -3,7 +3,9 @@ A simple package to create "widgets" of a Blazor Application so user can pop-out
 
 ### Installing
 You can install the package from Nuget as:
-    Install-Package BlazorWidget -Version 1.0.1
+
+    Install-Package BlazorWidget
+
 Or from VS package manager.
 
 ### Setup
