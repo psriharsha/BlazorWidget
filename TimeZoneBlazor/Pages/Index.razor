@@ -1,0 +1,29 @@
+﻿@page "/"
+
+<h1>Hello, world!</h1>
+
+Welcome to your new app.
+
+<SurveyPrompt Title=@message />
+<button @onclick="HandleClick">Click Me!!</button>
+@code{
+
+    [Inject]
+    public IWidgetService widgetService { get; set; }
+
+    public string message { get; set; } = "How is Blazor working for you?";
+
+    private int count;
+
+    private async Task HandleClick()
+    {
+        widgetService.OnWindowClosed += windowClosed;
+        await widgetService.Open("http://localhost:59079", $"something{count++}", 200, 300);
+    }
+
+    private void windowClosed(object sender, EventArgs e)
+    {
+        message = "Do you know that BBC closed?";
+        StateHasChanged();
+    }
+}
