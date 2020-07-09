@@ -3,6 +3,13 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <RazorLangVersion>3.0</RazorLangVersion>
+    <Authors>Sri Harsha Prabhala</Authors>
+    <Company />
+    <Description>A simple package to create "widgets" of a Blazor Application so user can pop-out a portion of the Blazor app if they wish to. Of course, the application developer should allow the app to be loaded as such and configure routes so that each widget points to a particular route</Description>
+    <Copyright>Copyright (c) 2020 Sri Harsha Prabhala</Copyright>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageProjectUrl>https://github.com/psriharsha/BlazorWidget</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/psriharsha/BlazorWidget</RepositoryUrl>
   </PropertyGroup>
 
 
