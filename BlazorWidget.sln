@@ -3,11 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30204.135
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorWidget", "BlazorWidget\BlazorWidget.csproj", "{B899AC29-08CE-4749-B938-C47FEDB6EDF1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorWidget", "BlazorWidget\BlazorWidget.csproj", "{B899AC29-08CE-4749-B938-C47FEDB6EDF1}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Sample", "Sample", "{B1303501-501E-4957-9CA9-6CF9C3A1600E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TimeZoneBlazor", "TimeZoneBlazor\TimeZoneBlazor.csproj", "{BF20E374-275D-4858-9739-D0F6162B53A2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorClientWidget", "Sample\BlazorClientWidget\BlazorClientWidget.csproj", "{88DFBEAB-AC38-4816-8110-7A40AF51D403}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorServerWidget", "BlazorServerWidget\BlazorServerWidget.csproj", "{C3D141DD-F9DF-4319-87BB-4215337A2863}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -19,16 +21,21 @@ Global
 		{B899AC29-08CE-4749-B938-C47FEDB6EDF1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B899AC29-08CE-4749-B938-C47FEDB6EDF1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B899AC29-08CE-4749-B938-C47FEDB6EDF1}.Release|Any CPU.Build.0 = Release|Any CPU
-		{BF20E374-275D-4858-9739-D0F6162B53A2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{BF20E374-275D-4858-9739-D0F6162B53A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{BF20E374-275D-4858-9739-D0F6162B53A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{BF20E374-275D-4858-9739-D0F6162B53A2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{88DFBEAB-AC38-4816-8110-7A40AF51D403}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{88DFBEAB-AC38-4816-8110-7A40AF51D403}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{88DFBEAB-AC38-4816-8110-7A40AF51D403}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{88DFBEAB-AC38-4816-8110-7A40AF51D403}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C3D141DD-F9DF-4319-87BB-4215337A2863}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C3D141DD-F9DF-4319-87BB-4215337A2863}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C3D141DD-F9DF-4319-87BB-4215337A2863}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C3D141DD-F9DF-4319-87BB-4215337A2863}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{BF20E374-275D-4858-9739-D0F6162B53A2} = {B1303501-501E-4957-9CA9-6CF9C3A1600E}
+		{88DFBEAB-AC38-4816-8110-7A40AF51D403} = {B1303501-501E-4957-9CA9-6CF9C3A1600E}
+		{C3D141DD-F9DF-4319-87BB-4215337A2863} = {B1303501-501E-4957-9CA9-6CF9C3A1600E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {BF2E1526-96C1-481E-841C-99262359C2A0}

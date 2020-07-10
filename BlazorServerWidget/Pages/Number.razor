@@ -1,0 +1,23 @@
+﻿@page "/number"
+@using Microsoft.AspNetCore.WebUtilities
+<span class="font-weight-bolder text-lg-left">Component @number</span>
+
+@code {
+    [Parameter]
+    public int number { get; set; } = 0;
+
+    [Inject]
+    public NavigationManager navManager { get; set; }
+
+    protected override void OnInitialized()
+    {
+        if (number == 0)
+        {
+            var uri = navManager.ToAbsoluteUri(navManager.Uri);
+            if (QueryHelpers.ParseQuery(uri.Query).TryGetValue("id", out var _queryId))
+            {
+                number = Convert.ToInt32(_queryId);
+            }
+        }
+    }
+}

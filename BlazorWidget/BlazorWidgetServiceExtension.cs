@@ -9,7 +9,7 @@ namespace BlazorWidget
     {
         public static IServiceCollection AddBlazorWidgetService(this IServiceCollection services)
         {
-            return services.AddSingleton<IWidgetService, WidgetService>();
+            return services.AddScoped<IWidgetService, WidgetService>();
         }
     }
 }

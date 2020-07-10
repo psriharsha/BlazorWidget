@@ -9,7 +9,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using BlazorWidget;
 
-namespace TimeZoneBlazor
+namespace BlazorClientWidget
 {
     public class Program
     {

@@ -1,0 +1,71 @@
+﻿@page "/"
+
+<h1>Hello, <i>BlazorServer</i>!</h1>
+<p>
+    This is a sample <strong>BlazorServer</strong> application to demonstrate IWidgetService.
+</p>
+<SurveyPrompt Title="" />
+
+<div class="row text-center">
+    <div class="col-4">
+        <button type="button" class="btn btn-success"
+                @onclick='(() => OpenWidget("number?id=1", 150, 500))'>
+            <Number number="1" />
+            <span class="oi oi-external-link link-cursor"></span>
+        </button>
+    </div>
+    <div class="col-4">
+        <button type="button" class="btn btn-warning"
+                @onclick='(() => OpenWidget("number?id=2", 150, 500))'>
+            <Number number="2" />
+            <span class="oi oi-external-link link-cursor"></span>
+        </button>
+    </div>
+    <div class="col-4">
+        <button type="button" class="btn btn-danger"
+                @onclick='(() => OpenWidget("number?id=3", 150, 500))'>
+            <Number number="3" />
+            <span class="oi oi-external-link link-cursor"></span>
+        </button>
+    </div>
+</div>
+<br />
+<div class="row">
+    <div class="col-lg-4 col-md-12">
+        <div class="card">
+            <div class="card-header">
+                <span class="card-title font-weight-bold">Counter</span>
+                <span class="float-right">
+                    <span class="oi oi-external-link link-cursor"
+                          @onclick='(() => OpenWidget("counter", 250, 500))'></span>
+                </span>
+            </div>
+            <div class="card-body">
+                <Counter />
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-8 col-md-12">
+        <div class="card">
+            <div class="card-header">
+                <span class="card-title font-weight-bold">Weather forecast</span>
+                <span class="float-right">
+                    <span class="oi oi-external-link link-cursor"
+                          @onclick='(() => OpenWidget("fetchdata", 500, 750))'></span>
+                </span>
+            </div>
+            <div class="card-body">
+                <FetchData />
+            </div>
+        </div>
+    </div>
+</div>
+@code{
+    [Inject]
+    public IWidgetService widgetService { get; set; }
+
+    private async Task OpenWidget(string path, int height, int width)
+    {
+        await widgetService.Open("/" + path, path, height, width);
+    }
+}
