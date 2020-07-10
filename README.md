@@ -31,7 +31,7 @@ or program.cs (Web Assembly)
     
 ### Usage
 
-Include the following snippet in your index.html page:
+Include the following snippet in your index.html or _Host.cshtml file:
 
     <script src="_content/BlazorWidget/widget.js"></script>
 
