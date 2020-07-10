@@ -15,10 +15,15 @@ Welcome to your new app.
 
     private int count;
 
-    private async Task HandleClick()
+    protected override async Task OnInitializedAsync()
     {
         widgetService.OnWidgetClosed += windowClosed;
-        await widgetService.Open("http://localhost:59079", $"something{count++}", 200, 300);
+        await Task.Delay(5);
+    }
+
+    private async Task HandleClick()
+    {
+        await widgetService.Open("http://localhost:59079", "_blank", 200, 300);
     }
 
     private void windowClosed(object sender, EventArgs e)

@@ -25,7 +25,7 @@ namespace BlazorWidget
         public ValueTask Open(string url, string title, int height, int width)
         {
             wServiceListener = DotNetObjectReference.Create(this);
-            return jsRuntime.InvokeVoidAsync("blazorWidget.open", url, title, $"height={height},width={width},location=0", wServiceListener);
+            return jsRuntime.InvokeVoidAsync("blazorWidget.open", url, title, $"height={height},width={width}", wServiceListener);
         }
 
         [JSInvokable("NotifyWindowClosed")]
