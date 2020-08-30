@@ -59,4 +59,4 @@ height - the height of the new widget
 width - the width of the new widget
 
 ### Event(s) available:
-* OnWidgetClosed - to handle widget closed event
+* OnWidgetClosed - to handle widget closed event with it's name
