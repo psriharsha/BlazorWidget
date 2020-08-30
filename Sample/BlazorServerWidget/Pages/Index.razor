@@ -60,12 +60,40 @@
         </div>
     </div>
 </div>
+<div class="row">
+    <div class="col-12">
+        <h2>Windows closed</h2>
+        @if (listOfWindowsClosed.Any())
+        {
+            <ul>
+                @foreach (var widgetName in listOfWindowsClosed)
+                {
+                    <li>@widgetName</li>
+                }
+            </ul>
+        }
+    </div>
+</div>
 @code{
     [Inject]
     public IWidgetService widgetService { get; set; }
 
+    List<string> listOfWindowsClosed = new List<string>();
+
+    protected override Task OnInitializedAsync()
+    {
+        widgetService.OnWidgetClosed += OnWidgetClosed;
+        return base.OnInitializedAsync();
+    }
+
     private async Task OpenWidget(string path, int height, int width)
     {
         await widgetService.Open("/" + path, path, height, width);
+    }
+
+    private void OnWidgetClosed(object e, string windowName)
+    {
+        listOfWindowsClosed.Add(windowName);
+        StateHasChanged();
     }
 }
