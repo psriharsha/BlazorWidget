@@ -1,14 +1,15 @@
 ﻿var AppWindows = new Array();
 const blazorWidget = {
     open: (url, title, prop, obj) => {
-        AppWindows.push(window);
+        AppWindows["__main"] = window;
         blazorWidget.setupKill(window);
-        var w = window.open(url, title, prop);
-        if (w != undefined) {
-            AppWindows.push(w);
-            //blazorWidget.pollForWindow(w, obj);
-            w.onbeforeunload = () => {
-                obj.invokeMethodAsync('NotifyWindowClosed').then(r => console.log(r));
+        if (!blazorWidget.winExists(title)) {
+            var w = window.open(url, title, prop);
+            if (w != undefined) {
+                AppWindows[title] = w;
+                w.onbeforeunload = () => {
+                    obj.invokeMethodAsync('NotifyWindowClosed', title).then(() => console.log(title + " window closed"));
+                }
             }
         }
     },
@@ -16,6 +17,9 @@ const blazorWidget = {
         win.onbeforeunload = () => {
             AppWindows.forEach(i => i.close());
         }
+    },
+    winExists: (win) => {
+        return AppWindows[win] != undefined;
     }
 }
 

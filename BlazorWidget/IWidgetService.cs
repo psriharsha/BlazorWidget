@@ -7,7 +7,7 @@ namespace BlazorWidget
 {
     public interface IWidgetService
     {
-        event EventHandler OnWidgetClosed;
+        event EventHandler<string> OnWidgetClosed;
         ValueTask Open(string url, string title, int height, int width);
     }
 }
